@@ -1,0 +1,13 @@
+<div class="col">
+    <div class="card">
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <p>{{ note.text }}</p>
+                <footer class="blockquote-footer"> Создано {{ note.created|date:"d.m.Y H:i:s" }}
+                    пользователем {{ note.user }}</footer>
+                <a class="btn btn-secondary" href="{% url 'edit'  note_id=note.pk %}">Редактировать</a>
+                <a class="btn btn-danger mb-10" href="{% url 'delete'  note_id=note.pk %}">Удалить</a>
+            </blockquote>
+        </div>
+    </div>
+</div>

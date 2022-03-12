@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}
+    Главная
+{% endblock %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <div>Ваших заметок: {{ notes_count }}</div>
+    {% else %}
+        <div>{{ project_title }}</div>
+    {% endif %}
+{% endblock %}
