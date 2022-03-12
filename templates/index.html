@@ -4,8 +4,8 @@
 {% endblock %}
 {% block content %}
     {% if user.is_authenticated %}
-        <div>Ваших заметок: {{ notes_count }}</div>
+        <div class="h1 text-center">Ваших заметок: {{ notes_count }}</div>
     {% else %}
-        <div>{{ project_title }}</div>
+        <div class="h1 text-center">{{ project_title }}</div>
     {% endif %}
 {% endblock %}

@@ -3,7 +3,10 @@
     Список заметок
 {% endblock %}
 {% block content %}
-    <div class="row row-cols-1 row-cols-md-4 g-4">
+    {% if not notes %}
+        <div class="h1 text-center">У Вас нет сохранённых заметок</div>
+    {% endif %}
+    <div class="row row-cols-1 row-cols-md-4 g-4 m-3">
     {% for note in notes %}
         {% include 'note.html' %}
     {% endfor %}

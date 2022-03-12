@@ -32,10 +32,10 @@ def signup(request):
             return redirect('homepage')
     else:
         form = UserForm()
-        context = {
-            'form': form,
-        }
-        return render(request, 'registration/signup.html', context)
+    context = {
+        'form': form,
+    }
+    return render(request, 'registration/signup.html', context)
 
 
 @login_required

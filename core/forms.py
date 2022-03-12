@@ -10,6 +10,10 @@ class NoteForm(forms.ModelForm):
         model = Note
         fields = ['text']
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['text'].widget.attrs.update({'class': 'form-control'})
+
 
 class UserForm(UserCreationForm):
     email = forms.EmailField(required=True)
@@ -25,3 +29,9 @@ class UserForm(UserCreationForm):
         if commit:
             user.save()
         return user
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['email'].widget.attrs.update({'class': 'form-control'})
+        self.fields['password1'].widget.attrs.update({'class': 'form-control'})
+        self.fields['password2'].widget.attrs.update({'class': 'form-control'})
