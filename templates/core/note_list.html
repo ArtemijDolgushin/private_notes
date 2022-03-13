@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'core/base.html' %}
 {% block title %}
     Список заметок
 {% endblock %}
@@ -8,7 +8,7 @@
     {% endif %}
     <div class="row row-cols-1 row-cols-md-4 g-4 m-3">
     {% for note in notes %}
-        {% include 'note.html' %}
+        {% include 'core/note.html' %}
     {% endfor %}
     </div>
 {% endblock %}

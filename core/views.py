@@ -17,7 +17,7 @@ def index(request):
         context = {
             'project_title': 'Приватные заметки.',
         }
-    return render(request, 'index.html', context)
+    return render(request, 'core/index.html', context)
 
 
 def signup(request):
@@ -44,7 +44,7 @@ def notes_list(request):
     context = {
         'notes': notes,
     }
-    return render(request, 'note_list.html', context)
+    return render(request, 'core/note_list.html', context)
 
 
 @login_required
@@ -62,7 +62,7 @@ def add(request):
             'form': form,
             'title': 'Добавить заметку',
         }
-        return render(request, 'note_form.html', context)
+        return render(request, 'core/note_form.html', context)
 
 
 @login_required
@@ -85,7 +85,7 @@ def edit(request, note_id):
     context = {
         'form': form, 'title': 'Редактировать заметку',
     }
-    return render(request, 'note_form.html', context)
+    return render(request, 'core/note_form.html', context)
 
 
 @login_required
